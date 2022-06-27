@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 
 //import your own components
-import ToDo from "./component/todo.jsx";
+import Container from "./component/container.jsx";
 
 //render your react application
-ReactDOM.render(<ToDo />, document.querySelector("#app"));
+ReactDOM.render(<Container />, document.querySelector("#app"));
