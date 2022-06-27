@@ -6,13 +6,11 @@ const Formulario = () => {
     const [valInput,setInput] = useState("");
     const [valTarea,setTarea] = useState([]);  
 
-    const manejador = (event) => { 
-        if (event.key === "Enter"){ setTarea([...valTarea,valInput])}  
-        console.log(valTarea);
-    }
+    const manejador = (event) => { if (event.key === "Enter"){ setTarea([...valTarea,valInput])}}
 
+    let suma = 0;
     const imprimir = valTarea.map((valTarea) =>
-        <div>{valTarea}</div>
+        <div id={suma +=1}>{valTarea}</div>
     )
 
 	return (
