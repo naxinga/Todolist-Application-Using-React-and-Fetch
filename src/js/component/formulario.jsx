@@ -9,20 +9,17 @@ const Formulario = () => {
     const manejador = (event) => { if (event.key === "Enter"){ setTarea([...valTarea,valInput])}}
 
     const borrar = (bor) => {
-        let a = valTarea.splice(bor,1);
+        let a = [...valTarea]
+        a.splice(bor,1);
         setTarea(a);
     }   
-
-    let suma = 0;
-    const imprimir = valTarea.map((valTarea) =>
-        <div id={suma +=1} className="text-start ms-5 mt-4">{valTarea} <button onClick={borrar(suma)}> X </button></div>
+      
+    const imprimir = valTarea.map((valTarea,indice) =>
+        <div id={indice} className="text-start ms-5 mt-4">{valTarea} <button onClick={()=>borrar(indice)}> X </button></div>
    
     )
 
-  
-
     console.log(valTarea)
-
   
 	return (
             <div className="todo-list">
