@@ -6,7 +6,7 @@ const ToDo = props => {
 	
 
 	return (
-		<div>{props.tareas}</div>
+		<div>{props.tareas} </div>
 	);
 };
 
