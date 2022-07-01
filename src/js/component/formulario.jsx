@@ -40,7 +40,7 @@ const Formulario = () => {
     }   
       
     const imprimir = valTarea.map((valTarea,indice) =>
-        <div id={indice} className="text-start ms-5 mt-4">{valTarea} <button onClick={()=>borrar(indice)}> X </button></div>
+        <div id={indice} key={indice} className="text-start ms-5 mt-4">{valTarea} <button id="borrador" onClick={()=>borrar(indice)}> X </button></div>
    
     )
   
@@ -50,6 +50,7 @@ const Formulario = () => {
                 <input
                     type="text"
                     className="text"
+                    id="inp"
                     value={valInput}
                     onChange={e => setInput(e.target.value)}
                     onKeyUp={manejador}

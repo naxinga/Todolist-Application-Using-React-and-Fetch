@@ -10,7 +10,7 @@ const Container = () => {
 			<div className="row">
 				<div className="col"></div>
 				<div className="col text-center">
-					<h1 className="text-center mt-5">Contenedor</h1>
+					<h1 className="text-center mt-5">Procrastinando</h1>
 					<Formulario/>
 				</div>
 				<div className="col"></div>
