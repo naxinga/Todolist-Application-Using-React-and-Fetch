@@ -9,27 +9,7 @@ const Formulario = () => {
     const [valInput,setInput] = useState("");
     const [valTarea,setTarea] = useState([]);     
     
-    useEffect (
-        ()=>{
-            fetch('https://assets.breatheco.de/apis/fake/todos/user/naxinga', {
-                    method: "GET", // Si no se le especifica metodo es GET, aqui sobraría.
-                })
-                .then(resp => {
-                    console.log(resp.ok); // will be true if the response is successfull
-                    console.log(resp.status); // the status code = 200 or code = 400 etc.
-                    console.log(resp.text()); // will try return the exact result as string
-                    return resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
-                })
-                .then(data => {
-                    setTarea(data);
-                })
-                .catch(error => {
-                    //error handling
-                    console.log(error);
-                });
-        }, 
-        []
-    )
+    
 
     const manejador = (event) => { if (event.key === "Enter"){ setTarea([...valTarea,valInput])}}
 
