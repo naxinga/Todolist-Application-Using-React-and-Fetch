@@ -43,8 +43,6 @@ const Formulario = () => {
         <div id={indice} className="text-start ms-5 mt-4">{valTarea} <button onClick={()=>borrar(indice)}> X </button></div>
    
     )
-
-    console.log(valTarea)
   
 	return (
             <div className="todo-list">
