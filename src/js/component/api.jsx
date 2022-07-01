@@ -1,23 +1,29 @@
+export const getApiTasks = async() =>{
+  try{
+    const resp = await fetch('https://assets.breatheco.de/apis/fake/todos/user/naxinga', {
+      method: "GET", // Si no se le especifica metodo es GET, aqui sobraría.
+    })
 
-fetch('https://assets.breatheco.de/apis/fake/todos/user/naxinga', {
-    method: "PUT",
-    body: JSON.stringify(todos),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-  .then(resp => {
-      console.log(resp.ok); // will be true if the response is successfull
-      console.log(resp.status); // the status code = 200 or code = 400 etc.
-      console.log(resp.text()); // will try return the exact result as string
-      return resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
-  })
-  .then(data => {
-      setTarea(data);
-  })
-  .catch(error => {
-      //error handling
+      const data = await resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
+      
+      return data;
+
+  } catch(error) {
       console.log(error);
-  });
+  }
+}
 
-export default fetch;
+export const putApiTask = async(put) => {
+  try{
+    const resp = await fetch('https://assets.breatheco.de/apis/fake/todos/user/naxinga', {
+      method: "PUT",
+      body: JSON.stringify(put),
+      headers: {
+       "Content-Type": "application/json"
+      }
+  })
+
+      } catch(error) {
+        console.log(error);
+      }
+  }
